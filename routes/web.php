@@ -20,7 +20,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('/student/grades/{id}', [GradeController::class, 'show'])->name('student.grades.show');
     Route::get('/student/upload',  [UploadController::class, 'show'])->name('student.upload.show');
-    Route::post('/student/upload', [UploadController::class, 'upload'])->name('student.upload.store');
+    Route::post('/student/upload/vulnerable', [UploadController::class, 'uploadVulnerable'])->name('student.upload.vulnerable');
+    Route::post('/student/upload/secure', [UploadController::class, 'uploadSecure'])->name('student.upload.secure');
     Route::get('/download',       [DownloadController::class, 'showDownloadPage'])->name('student.download');
     Route::get('/download/file',  [DownloadController::class, 'download'])->name('student.download.file');
 });
