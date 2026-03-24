@@ -62,6 +62,28 @@
                     </div>
                 </a>
 
+                {{-- Module 1B: Blind SQLi --}}
+                <a href="/sqli/blind"
+                   class="flex items-center gap-3 px-3 py-2.5 rounded-lg transition
+                          {{ request()->is('sqli/blind*') ? 'bg-rose-700 text-white' : 'hover:bg-gray-700 text-gray-300' }}">
+                    <span class="text-lg">🕶️</span>
+                    <div>
+                        <p class="text-sm font-medium">Blind SQLi</p>
+                        <p class="text-xs {{ request()->is('sqli/blind*') ? 'text-rose-200' : 'text-gray-400' }}">Inferential</p>
+                    </div>
+                </a>
+
+                {{-- Module 1C: OOB SQLi --}}
+                <a href="/sqli/oob"
+                   class="flex items-center gap-3 px-3 py-2.5 rounded-lg transition
+                          {{ request()->is('sqli/oob*') ? 'bg-pink-700 text-white' : 'hover:bg-gray-700 text-gray-300' }}">
+                    <span class="text-lg">📡</span>
+                    <div>
+                        <p class="text-sm font-medium">OOB SQLi</p>
+                        <p class="text-xs {{ request()->is('sqli/oob*') ? 'text-pink-200' : 'text-gray-400' }}">Out-of-band</p>
+                    </div>
+                </a>
+
                 {{-- Module 2: IDOR --}}
                 <a href="/student/grades/1"
                    class="flex items-center gap-3 px-3 py-2.5 rounded-lg transition
