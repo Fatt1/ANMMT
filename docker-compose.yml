@@ -1,0 +1,18 @@
+services:
+  mysql:
+    image: "mysql:8.0"
+    container_name: student_mysql
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: ""
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+      MYSQL_DATABASE: "student_db"
+    volumes:
+      - ./docker/mysql/data:/var/lib/mysql
+    networks:
+      - sail
+
+networks:
+  sail:
+    driver: bridge
