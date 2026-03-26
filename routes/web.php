@@ -24,4 +24,5 @@ Route::middleware('auth')->group(function () {
     Route::post('/student/upload/secure', [UploadController::class, 'uploadSecure'])->name('student.upload.secure');
     Route::get('/download',       [DownloadController::class, 'showDownloadPage'])->name('student.download');
     Route::get('/download/file',  [DownloadController::class, 'download'])->name('student.download.file');
+    Route::get('/download/file/secure', [DownloadController::class, 'downloadSecure'])->name('student.download.file.secure');
 });
