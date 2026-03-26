@@ -6,6 +6,7 @@ use App\Models\Grade;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Password;
 
 class RegisterController extends Controller
 {
@@ -21,11 +22,10 @@ class RegisterController extends Controller
             'email'    => ['required', 'email', 'max:255', 'unique:users,email'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
-
         $user = User::create([
             'name'     => $validated['name'],
             'email'    => $validated['email'],
-            'password' => $validated['password'], // stored as plaintext (intentional for CTF lab)
+            'password' => $validated['password'],
         ]);
 
         $subjects  = ['Mathematics', 'Physics', 'Chemistry', 'Biology', 'History', 'Literature', 'English', 'Computer Science'];

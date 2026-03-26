@@ -60,6 +60,60 @@
         </div>
     </a>
 
+    {{-- Module 1B: Blind SQLi --}}
+    <a href="/sqli/blind"
+       class="block bg-white rounded-xl shadow hover:shadow-lg transition p-6 border-l-4 border-rose-500 group">
+        <div class="flex items-start gap-4">
+            <div class="text-3xl mt-1">🕶️</div>
+            <div class="flex-1">
+                <div class="flex items-center justify-between mb-1">
+                    <h2 class="text-lg font-semibold text-gray-800 group-hover:text-rose-600 transition">Blind SQL Injection</h2>
+                    <span class="text-xs font-medium bg-rose-100 text-rose-700 px-2 py-0.5 rounded-full">Inferential</span>
+                </div>
+                <p class="text-gray-500 text-sm mb-3">Exploit true/false behavior and timing differences to infer data without direct output.</p>
+                <div class="bg-gray-50 rounded-lg p-2 text-xs font-mono text-rose-700 border border-gray-200">
+                    1' AND IF(1=1,SLEEP(3),0) --
+                </div>
+            </div>
+        </div>
+    </a>
+
+    {{-- Module 1C: OOB SQLi --}}
+    <a href="/sqli/oob"
+       class="block bg-white rounded-xl shadow hover:shadow-lg transition p-6 border-l-4 border-pink-500 group">
+        <div class="flex items-start gap-4">
+            <div class="text-3xl mt-1">📡</div>
+            <div class="flex-1">
+                <div class="flex items-center justify-between mb-1">
+                    <h2 class="text-lg font-semibold text-gray-800 group-hover:text-pink-600 transition">Out-of-band SQLi</h2>
+                    <span class="text-xs font-medium bg-pink-100 text-pink-700 px-2 py-0.5 rounded-full">OOB</span>
+                </div>
+                <p class="text-gray-500 text-sm mb-3">Trigger external interaction from DB functions (DNS/SMB/HTTP) to exfiltrate data indirectly.</p>
+                <div class="bg-gray-50 rounded-lg p-2 text-xs font-mono text-pink-700 border border-gray-200">
+                    \\attacker.lab\share\probe.txt
+                </div>
+            </div>
+        </div>
+    </a>
+
+    {{-- Module 1D: UNION-based SQLi --}}
+    <a href="/sqli/union"
+       class="block bg-white rounded-xl shadow hover:shadow-lg transition p-6 border-l-4 border-red-400 group">
+        <div class="flex items-start gap-4">
+            <div class="text-3xl mt-1">🧬</div>
+            <div class="flex-1">
+                <div class="flex items-center justify-between mb-1">
+                    <h2 class="text-lg font-semibold text-gray-800 group-hover:text-red-600 transition">UNION-based SQL Injection</h2>
+                    <span class="text-xs font-medium bg-red-100 text-red-700 px-2 py-0.5 rounded-full">UNION</span>
+                </div>
+                <p class="text-gray-500 text-sm mb-3">Exploit product detail id parameter with UNION SELECT to pull database metadata.</p>
+                <div class="bg-gray-50 rounded-lg p-2 text-xs font-mono text-red-700 border border-gray-200">
+                    /product/detail?id=-1 UNION SELECT 1,database(),999--
+                </div>
+            </div>
+        </div>
+    </a>
+
     {{-- Module 2: IDOR --}}
     <a href="/student/grades/1"
        class="block bg-white rounded-xl shadow hover:shadow-lg transition p-6 border-l-4 border-yellow-500 group">
